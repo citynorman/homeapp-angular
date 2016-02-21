@@ -30,9 +30,6 @@
 
     <ul class="main-menu">
         
-        <li data-ui-sref-active="active">
-            <a data-ui-sref="home" data-ng-click="mactrl.sidebarStat($event)"><i class="zmdi zmdi-home"></i> Home</a>
-        </li>
         <li class="sub-menu" data-ng-class="{ 'active toggled': mactrl.$state.includes('alerts') }">
             <a href="" toggle-submenu><i class="zmdi zmdi-alert-triangle"></i> Alerts</a>
 
@@ -41,7 +38,27 @@
             </ul>
         </li>
         <li data-ui-sref-active="active">
-            <a data-ui-sref="typography" data-ng-click="mactrl.sidebarStat($event)"><i class="zmdi zmdi-format-underlined"></i> Overview</a>
+            <a data-ui-sref="typography" data-ng-click="mactrl.sidebarStat($event)"><i class="zmdi zmdi-format-underlined"></i> Baby Monitor</a>
+        </li>
+        <li class="sub-menu" data-ng-class="{ 'active toggled': mactrl.$state.includes('alerts') }">
+            <a href="" toggle-submenu><i class="zmdi zmdi-home"></i> Home</a>
+
+            <ul>
+                <li><a data-ui-sref="alerts" data-ng-click="mactrl.sidebarStat($event)">Electricity</a></li>
+            </ul>
+            <ul>
+                <li><a data-ui-sref="alerts" data-ng-click="mactrl.sidebarStat($event)">Appliances</a></li>
+            </ul>
+        </li>
+        <li class="sub-menu" data-ng-class="{ 'active toggled': mactrl.$state.includes('alerts') }">
+            <a href="" toggle-submenu><i class="zmdi zmdi-alert-triangle"></i> Car</a>
+
+            <ul>
+                <li><a data-ui-sref="alerts" data-ng-click="mactrl.sidebarStat($event)">Tires</a></li>
+            </ul>
+            <ul>
+                <li><a data-ui-sref="alerts" data-ng-click="mactrl.sidebarStat($event)">Gas</a></li>
+            </ul>
         </li>
     </ul>
 </div>

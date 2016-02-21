@@ -55,6 +55,11 @@ materialAdmin
                 templateUrl: 'views/homeapp-feedback.html'
             })
 
+            .state('deliver', {
+                url: '/alerts-delivery',
+                templateUrl: 'views/homeapp-delivery.html'
+            })
+
 
             //------------------------------
             // TYPOGRAPHY
