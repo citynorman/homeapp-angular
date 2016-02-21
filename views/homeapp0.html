@@ -58,25 +58,66 @@
                                 </div>
                             </div>
 
-                            <div class="listview p-t-5">
-                                <a class="lv-item" href="" data-ng-repeat="w in wctrl.bsResult.list">
-                                    <div class="media">
+                            
+                            
+                            
+<div class="listview p-t-5">
+                                <!-- ngRepeat: w in wctrl.bsResult.list --><a class="lv-item ng-scope" href="">
+                                    <div class="media" data-ui-sref="alerts">
                                         <div class="pull-left">
-                                            <img class="lv-img-sm" data-ng-src="img/widgets/{{ w.img }}" alt="">
+                                            <img class="lv-img-sm" data-ng-src="img/widgets/note4.jpg" alt="" src="img/widgets/note4.jpg">
                                         </div>
                                         <div class="media-body">
-                                            <div class="lv-title">{{ w.name }}</div>
-                                            <small class="lv-small">{{ w.range }}</small>
+                                            <div class="lv-title ng-binding">Baby Health</div>
+                                            <small class="lv-small ng-binding">Requires attention</small>
                                         </div>
                                     </div>
-                                </a>
+                                </a><!-- end ngRepeat: w in wctrl.bsResult.list --><a class="lv-item ng-scope" href="">
+                                    <div class="media" data-ui-sref="house_alerts" >
+                                        <div class="pull-left">
+                                            <img class="lv-img-sm" data-ng-src="img/widgets/mate7.jpg" alt="" src="img/widgets/mate7.jpg">
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="lv-title ng-binding">Housing</div>
+                                            <small class="lv-small ng-binding">Requires attention</small>
+                                        </div>
+                                    </div>
+                                </a><!-- end ngRepeat: w in wctrl.bsResult.list --><a class="lv-item ng-scope" href="">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            <img class="lv-img-sm" data-ng-src="img/widgets/535.jpg" alt="" src="img/widgets/535.jpg">
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="lv-title ng-binding">Car</div>
+                                            <small class="lv-small ng-binding">Requires attention</small>
+                                        </div>
+                                    </div>
+                                </a><!-- end ngRepeat: w in wctrl.bsResult.list -->
 
                                 <div class="clearfix"></div>
 
                                 <a class="lv-footer" href="">
                                     View All
                                 </a>
-                            </div>
+    
+    <button class="btn waves-effect  btn-lg btn-block" ng-click="StopTimer()"><i class="zmdi zmdi-close"></i> Dismiss</button>
+                            </div>                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                         </div>
                     </div>
                 </div>

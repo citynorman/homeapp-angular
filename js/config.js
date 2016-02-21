@@ -42,7 +42,7 @@ materialAdmin
             //------------------------------
             .state ('alerts', {
                 url: '/alerts',
-                templateUrl: 'views/homeapp-alerts.html'
+                templateUrl: 'views/homeapp-alerts-baby.html'
             })
 
             .state('actions', {
@@ -55,9 +55,27 @@ materialAdmin
                 templateUrl: 'views/homeapp-feedback.html'
             })
 
-            .state('deliver', {
+            .state('delivery', {
                 url: '/alerts-delivery',
                 templateUrl: 'views/homeapp-delivery.html'
+            })
+
+            .state('urgentcare', {
+                url: '/alerts-urgent-care',
+                templateUrl: 'views/homeapp-urgent-care.html'
+            })
+
+                    .state('house_alerts', {
+                url: '/house-alerts',
+                templateUrl: 'views/homeapp-alerts-house.html'
+            })
+                    .state('house_action', {
+                url: '/house-action',
+                templateUrl: 'views/homeapp-actions-house.html'
+            })
+                    .state('house_book', {
+                url: '/house-book',
+                templateUrl: 'views/homeapp-house-book.html'
             })
 
 

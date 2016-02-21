@@ -21,7 +21,13 @@ materialAdmin
     // Best Selling Widget Data (Home Page)
     // =========================================================================
 
-    .service('bestsellingService', ['$resource', function($resource){
+
+    .service('bestsellingService', ['$resource', '$state', function($resource){
+        console.log('test');
+        
+        
+        
+        
         this.getBestselling = function(img, name, range) {
             var gbList = $resource("data/best-selling.json");
             

@@ -188,14 +188,108 @@ materialAdmin
     // =========================================================================
     // Best Selling Widget
     // =========================================================================
+    .controller('statusCtrl', function($scope, $http, todoService){
+        
+        $scope.alertOn = function() {
+            
+            
+            $http({
+        url: 'http://simplyshare.it:5500/actionStatus',
+        method: "POST",
+        data: {"action":0}
+    })
+    .then(function(response) {
+            console.log('turned on');
+    }, 
+    function(response) { // optional
+            console.log('fail'+response);
+    });
+            
+        };
 
-    .controller('bestsellingCtrl', function(bestsellingService){
+        
+        $scope.alertOff = function() {
+            
+            
+            $http({
+        url: 'http://simplyshare.it:5500/actionStatus',
+        method: "POST",
+        data: {"action":1}
+    })
+    .then(function(response) {
+            console.log('turned off');
+    }, 
+    function(response) { // optional
+            console.log('fail'+response);
+    });
+            
+            
+            
+            
+            
+        };
+        
+        
+    })
+
+    .controller('bestsellingCtrl', function($state, $scope, $http, $interval, bestsellingService){
         // Get Best Selling widget Data
         this.img = bestsellingService.img;
         this.name = bestsellingService.name;
         this.range = bestsellingService.range; 
         
         this.bsResult = bestsellingService.getBestselling(this.img, this.name, this.range);
+    
+    
+    
+    
+//Initiate the Timer object.
+            $scope.Timer = null;
+ 
+            //Timer start function.
+            $scope.StartTimer = function () {
+                //Set the Timer start message.
+                $scope.Message = "Timer started. ";
+ 
+                //Initialize the Timer to run every 1000 milliseconds i.e. one second.
+                $scope.Timer = $interval(function () {
+                    //Display the current time.
+                    $scope.gotoAlerts();
+                }, 2000);
+            };
+ 
+            //Timer stop function.
+            $scope.StopTimer = function () {
+ 
+                //Set the Timer stop message.
+                $scope.Message = "Timer stopped.";
+ 
+                //Cancel the Timer.
+                if (angular.isDefined($scope.Timer)) {
+                    $interval.cancel($scope.Timer);
+                }
+            };    
+    
+    
+    $scope.StartTimer();
+    
+    
+    
+
+    
+    
+        $scope.gotoAlerts = function() {
+            $http.get('http://simplyshare.it:5500/getAlerts').then(function(data) {
+                console.log(data.data.alerts.length);   
+                if(data.data.alerts.length>0) {$scope.StopTimer(); $state.go('alerts');}
+            }, function(response) {console.log(response);});
+            
+        }
+
+    
+        
+        
+    
     })
 
  
