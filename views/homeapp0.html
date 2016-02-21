@@ -1,0 +1,90 @@
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/header.html'" data-ng-controller="headerCtrl as hctrl"></header>
+
+<section id="main">
+    <aside id="sidebar" data-ng-include="'template/sidebar-left.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.left === true }"></aside>
+
+    <aside id="chat" data-ng-include="'template/chat.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.right === true }"></aside>
+
+    <section id="content">
+
+        <div class="container">
+            <div class="block-header">
+                <h2>Dashboard</h2>
+
+                <ul class="actions">
+                    <li>
+                        <a href="">
+                            <i class="zmdi zmdi-trending-up"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="zmdi zmdi-check-all"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown" uib-dropdown>
+                        <a href="" uib-dropdown-toggle>
+                            <i class="zmdi zmdi-more-vert"></i>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a href="">Refresh</a>
+                            </li>
+                            <li>
+                                <a href="">Manage Widgets</a>
+                            </li>
+                            <li>
+                                <a href="">Widgets Settings</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="dash-widgets">
+                <div class="row">                   
+
+                    <div class="col-md-3 col-sm-6">
+                        <div id="best-selling" class="dash-widget-item" data-ng-controller="bestsellingCtrl as wctrl">
+                            <div class="dash-widget-header">
+                                <div class="dash-widget-title">House Operating Management Environment</div>
+                                <img src="img/widgets/bg-ditital1.png" alt="">
+                                <div class="main-item">
+                                    <small>Monitoring Status</small>
+                                    <h2>ON</h2>
+                                </div>
+                            </div>
+
+                            <div class="listview p-t-5">
+                                <a class="lv-item" href="" data-ng-repeat="w in wctrl.bsResult.list">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            <img class="lv-img-sm" data-ng-src="img/widgets/{{ w.img }}" alt="">
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="lv-title">{{ w.name }}</div>
+                                            <small class="lv-small">{{ w.range }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <div class="clearfix"></div>
+
+                                <a class="lv-footer" href="">
+                                    View All
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+</section>
+
+<footer id="footer" data-ng-include="'template/footer.html'"></footer>
